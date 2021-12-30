@@ -27,7 +27,7 @@
 	--background-color-dark: rgb(250, 240, 220);
 }
 
-.page-content, .mdl-layout-title, .menu-title, .mdl-navigation__link, .page-title, .title-description {
+h1, h2, .page-content, .mdl-layout-title, .menu-title, .mdl-navigation__link, .page-title, .title-description {
 	color: var(--text-color);
 	font-family: Rachana;
 	text-shadow: var(--text-shadow);

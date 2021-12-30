@@ -75,7 +75,19 @@ function loadFile(titleFile, index, event) {
 	$('.mdl-layout__drawer').attr("class", "mdl-layout__drawer");
 	$('.mdl-layout__obfuscator').attr("class", "mdl-layout__obfuscator");
 	$('.page-title').html(titleFile);
-	$('.page-content').html(`<i id='top'></i><br>` + Articles[titleFile] + `<br><br>`);
+	article = "";
+	chapters = "";
+	$.each(Articles[titleFile], function (key, value) {
+		verses = "";
+		$.each(value, function (key, value) {
+			indexVerse = key + 1;
+			verses += `<sup>` + indexVerse + `</sup>` + value + " ";
+		});
+		chapters += `<h2>` + key + `</h2>` + verses;
+		//console.log(key, value);
+	});
+	article = chapters;
+	$('.page-content').html(`<i id = 'top' ></i>` + article);
 	history.pushState({}, null, "/sathyavedapusthakam/?t=" + titleFile);
 	if (index == 0) {
 		$('.mdl-paging__prev').css("visibility", "hidden");
