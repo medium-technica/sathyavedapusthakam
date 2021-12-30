@@ -27,10 +27,16 @@
 	--background-color-dark: rgb(250, 240, 220);
 }
 
-h1, h2, .page-content, .mdl-layout-title, .menu-title, .mdl-navigation__link, .page-title, .title-description {
+.chapterId, .page-content, .mdl-layout-title, .menu-title, .mdl-navigation__link, .page-title, .title-description {
 	color: var(--text-color);
 	font-family: Rachana;
 	text-shadow: var(--text-shadow);
+}
+
+.chapterId {
+	font-size: x-large;
+	font-weight: bold;
+	margin-top: 10px;
 }
 
 .mdl-button--fab.mdl-button--mini-fab {

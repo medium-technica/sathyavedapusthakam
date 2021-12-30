@@ -82,7 +82,7 @@ function loadFile(titleFile, index, event) {
 			indexVerse = key + 1;
 			chapter += `<sup>` + indexVerse + `</sup>` + value + " ";
 		});
-		article += `<h3>` + key + `</h3>` + chapter;
+		article += `<div class="chapterId">` + key + `</div>` + chapter;
 		//console.log(key, value);
 	});
 	$('.page-content').html(`<i id = 'top' ></i>` + article);
