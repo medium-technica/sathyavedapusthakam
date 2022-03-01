@@ -3,6 +3,7 @@ $(fnInit())
 var ListFiles = [];
 var ListTitleFiles = [];
 var Articles;
+var indexVerse = 0;
 
 function fnInit() {
 	console.log("init");
@@ -96,7 +97,7 @@ function renderChapter(arrayVerses) {
 		if (isNaN(key)) {
 			chapter += `<div class="chapterTitle">` + key + `</div>` + renderChapter(value);
 		} else {
-			indexVerse = key + 1;
+			indexVerse += 1;
 			chapter += `<sup>` + indexVerse + `</sup>` + value + " ";
 		}
 	});
@@ -109,6 +110,7 @@ function renderArticle(objectJSON) {
 		if (isNaN(key)) {
 			article += `<div class="bookTitle">` + key + `</div>` + renderArticle(value);
 		} else {
+			indexVerse = 0;
 			article += `<div class="chapterId">` + key + `</div>` + renderChapter(value);
 		}
 	});
