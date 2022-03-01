@@ -75,16 +75,7 @@ function loadFile(titleFile, index, event) {
 	$('.mdl-layout__drawer').attr("class", "mdl-layout__drawer");
 	$('.mdl-layout__obfuscator').attr("class", "mdl-layout__obfuscator");
 	$('.page-title').html(titleFile);
-	article = "";
-	$.each(Articles[titleFile], function (key, value) {
-		chapter = "";
-		$.each(value, function (key, value) {
-			indexVerse = key + 1;
-			chapter += `<sup>` + indexVerse + `</sup>` + value + " ";
-		});
-		article += `<div class="chapterId">` + key + `</div>` + chapter;
-		//console.log(key, value);
-	});
+	article = renderArticle(Articles[titleFile]);
 	$('.page-content').html(`<i id = 'top' ></i>` + article);
 	history.pushState({}, null, "/sathyavedapusthakam/?t=" + titleFile);
 	if (index == 0) {
@@ -97,4 +88,29 @@ function loadFile(titleFile, index, event) {
 	} else {
 		$('.mdl-paging__next').css("visibility", "visible");
 	}
+}
+
+function renderChapter(arrayVerses) {
+	chapter = "";
+	$.each(arrayVerses, function (key, value) {
+		if (isNaN(key)) {
+			chapter += `<div class="chapterTitle">` + key + `</div>` + renderChapter(value);
+		} else {
+			indexVerse = key + 1;
+			chapter += `<sup>` + indexVerse + `</sup>` + value + " ";
+		}
+	});
+	return chapter;
+}
+
+function renderArticle(objectJSON) {
+	article = "";
+	$.each(objectJSON, function (key, value) {
+		if (isNaN(key)) {
+			article += `<div class="bookTitle">` + key + `</div>` + renderArticle(value);
+		} else {
+			article += `<div class="chapterId">` + key + `</div>` + renderChapter(value);
+		}
+	});
+	return article;
 }
