@@ -96,7 +96,7 @@ function renderChapter(arrayVerses) {
 	$.each(arrayVerses, function (key, value) {
 		if (isNaN(key)) {
 			chapter += `<div class="chapterTitle">` + key + `</div>` + renderChapter(value);
-		} else {
+		} else if (value != "") {
 			indexVerse += 1;
 			chapter += `<sup>` + indexVerse + `</sup>` + value + " ";
 		}
