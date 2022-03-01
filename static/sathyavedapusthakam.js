@@ -91,9 +91,9 @@ function loadFile(titleFile, index, event) {
 	}
 }
 
-function renderChapter(arrayVerses) {
+function renderChapter(objectJSON) {
 	chapter = "";
-	$.each(arrayVerses, function (key, value) {
+	$.each(objectJSON, function (key, value) {
 		if (isNaN(key)) {
 			chapter += `<div class="chapterTitle">` + key + `</div>` + renderChapter(value);
 		} else if (value != "") {
