@@ -1,0 +1,8 @@
+{
+ "editor.formatOnSave": true,
+ "[javascript]": {
+  "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter",
+ },
+ "editor.fontFamily": "Rachana",
+ "editor.fontSize": 24
+}
