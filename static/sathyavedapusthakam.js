@@ -91,14 +91,14 @@ function loadFile(titleFile, index, event) {
 	}
 }
 
-function renderChapter(objectJSON) {
+function renderChapter(indexChapter, objectJSON) {
 	chapter = "";
 	$.each(objectJSON, function (key, value) {
 		if (isNaN(key)) {
-			chapter += `<div class="chapterTitle">` + key + `</div>` + renderChapter(value);
+			chapter += `<div class="chapterTitle">` + key + `</div>` + renderChapter(indexChapter, value);
 		} else if (value != "") {
 			indexVerse += 1;
-			chapter += `<sup>` + indexVerse + `</sup>` + value + " ";
+			chapter += `<sup>` + indexChapter + ":" + indexVerse + `</sup>` + value + " ";
 		}
 	});
 	return chapter;
@@ -111,7 +111,7 @@ function renderArticle(objectJSON) {
 			article += `<div class="bookTitle">` + key + `</div>` + renderArticle(value);
 		} else {
 			indexVerse = 0;
-			article += `<div class="chapterId">` + key + `</div>` + renderChapter(value);
+			article += `<div class="chapterId">` + key + `</div>` + renderChapter(key, value);
 		}
 	});
 	return article;
