@@ -111,7 +111,7 @@ function renderArticle(objectJSON) {
 			article += `<div class="bookTitle">` + key + `</div>` + renderArticle(value);
 		} else {
 			indexVerse = 0;
-			article += `<div class="chapterId">` + `അദ്ധ്യായം ` + key + `:` + `</div>` + renderChapter(key, value);
+			article += `<div class="chapterId">` + `അദ്ധ്യായം ` + key + `</div>` + renderChapter(key, value);
 		}
 	});
 	return article;
