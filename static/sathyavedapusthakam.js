@@ -95,10 +95,10 @@ function renderChapter(indexChapter, objectJSON) {
 	chapter = "";
 	$.each(objectJSON, function (key, value) {
 		if (isNaN(key)) {
-			chapter += `<div class="chapterTitle">` + key + `</div>` + renderChapter(indexChapter, value);
+			chapter += `<div class="chapterTitle">` + key + `</div>`+renderChapter(indexChapter, value);
 		} else if (value != "") {
 			indexVerse += 1;
-			chapter += `<sup>` + indexChapter + ":" + indexVerse + `</sup>` + value + " ";
+			chapter += `<tr><td style = 'text-align: right; font-size: small'>` + indexChapter + `.<td style = 'text-align: right;font-size: small'>` + indexVerse + ".</td><td>" + value + "</td></tr>";
 		}
 	});
 	return chapter;
@@ -111,7 +111,7 @@ function renderArticle(objectJSON) {
 			article += `<div class="bookTitle">` + key + `</div>` + renderArticle(value);
 		} else {
 			indexVerse = 0;
-			article += `<div class="chapterId">` + `അദ്ധ്യായം ` + key + `</div>` + renderChapter(key, value);
+			article += `<div class="chapterId">` + `അദ്ധ്യായം ` + key + `</div>` + `<table>`+renderChapter(key, value)+`</table>`;
 		}
 	});
 	return article;

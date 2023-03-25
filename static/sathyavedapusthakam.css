@@ -39,6 +39,15 @@
  text-shadow: var(--text-shadow);
 }
 
+.page-content {
+ line-height: 1.5rem;
+ font-size: larger;
+}
+
+sup {
+ font-size: x-small;
+}
+
 .bookTitle {
  font-size: large;
  font-weight: bold;
@@ -121,9 +130,17 @@ body,
  height: 100%;
 }
 
+td {
+ vertical-align: text-top;
+}
+
+.chapterId {
+ text-align: center;
+}
+
 .page-content {
  margin: auto;
- text-align: center;
+ text-align: left;
  overflow: auto;
  padding: 0 1rem 0 1rem;
 }
