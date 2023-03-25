@@ -26,7 +26,7 @@ function loadFilesList() {
 			titleFileURL = getURLParam("t");
 			//console.log(Articles[titleFileURL]);
 			indexFile = Object.keys(Articles).indexOf(titleFileURL);
-			console.log("index from Name:" + indexFile);
+			//console.log("index from Name:" + indexFile);
 			if (indexFile >= 0 && ListFiles.length > 0) {
 				//console.log(ListFiles[indexFile]);
 				loadFile(ListTitleFiles[indexFile], indexFile);
@@ -98,6 +98,7 @@ function renderChapter(indexChapter, objectJSON) {
 			chapter += `<div class="chapterTitle">` + key + `</div>`+renderChapter(indexChapter, value);
 		} else if (value != "") {
 			indexVerse += 1;
+   //console.log(indexChapter, indexVerse);
 			chapter += `<tr><td style = 'text-align: right; font-size: small'>` + indexChapter + `.<td style = 'text-align: right;font-size: small'>` + indexVerse + ".</td><td>" + value + "</td></tr>";
 		}
 	});

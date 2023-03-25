@@ -48,6 +48,11 @@ sup {
  font-size: x-small;
 }
 
+.bookTitle,
+.chapterTitle {
+ text-align: center;
+}
+
 .bookTitle {
  font-size: large;
  font-weight: bold;
