@@ -1,7 +1,7 @@
 {
  "editor.formatOnSave": true,
  "[javascript]": {
-  "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter",
+  "editor.defaultFormatter": "vscode.json-language-features",
  },
  "editor.fontFamily": "Rachana",
  "editor.fontSize": 24
